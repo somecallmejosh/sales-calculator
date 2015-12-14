@@ -3,8 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <title>Sales Calculator</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="container">
+    <header class="row">
+      <div class="branding one-half column">
+        <h1>Phone Store</h1>
+      </div>
+      <div class="one-half column budget">
+        Available Budget: <span>$</span><span class="remaining-budget">0.00</span>
+      </div>
+    </header>
+    <div class="items-for-sale">
+      <div class="item header row">
+        <div class="three columns">Description</div>
+        <div class="two columns cost">Cost/Item</div>
+        <div class="two columns purchased"># Purchased</div>
+        <div class="two columns purchased">Total</div>
+        <div class="three columns item-action">Purchase</div>
+      </div>
+      <div class="item row">
+        <div class="item-description three columns">Phone</div>
+        <div class="phone-cost two columns cost">$0.00</div>
+        <div class="phones-purchased-count two columns">0</div>
+        <div class="phones-purchased-total two columns">$0.00</div>
+        <div class="item-action three columns">
+          <button class="purchase-phone u-full-width  button-primary">Purchase Phone</button>
+        </div>
+      </div>
+      <div class="item row"> 
+        <div class="item-description three columns">Phone Accessory</div>
+        <div class="accessory-cost two columns cost">$0.00</div>
+        <div class="accessory-purchased-count two columns">0</div>
+        <div class="accessory-purchased-total two columns">$0.00</div>
+        <div class="item-action three columns">
+          <button class="purchase-accessory u-full-width button-primary">Purchase Accessories</button>
+        </div>
+      </div>
+    </div>
+  </div>
   
+
 </body>
 </html>

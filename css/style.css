@@ -1,0 +1,28 @@
+.header {
+  padding-bottom: 10px;
+  border-bottom: #ccc 1px solid;
+}
+.header > div {
+  font-weight: bold;
+}
+
+.budget {
+  text-align: right;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+.budget span {
+  color: red;
+}
+
+.item {
+  border-bottom: #ccc 1px solid;
+}
+.item:not(:first-child) {
+  padding-top: 10px;
+}
+
+[class*="purchased"], .cost, .item-action{
+  text-align: center;
+}
