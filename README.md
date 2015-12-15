@@ -1,7 +1,7 @@
 Sales Calculator
 ================
 
-Working through the excersise from Kyle Simpson's _You Don't Know JavaScript: Up & Going_ book. This from the end of the first chapter. 
+Working through the Chapter One [practice excersise](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/ch1.md#practice) from Kyle Simpson's _You Don't Know JavaScript: Up & Going_ book. 
 
 ## Requirements
 
