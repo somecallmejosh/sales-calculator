@@ -23,6 +23,15 @@
   padding-top: 10px;
 }
 
-[class*="purchased"], .cost, .item-action{
+[class*="purchased"], .cost, .item-action, .combined-total{
   text-align: center;
+}
+
+.footer {
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.text-right {
+  text-align: right;
 }

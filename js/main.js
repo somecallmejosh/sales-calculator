@@ -18,7 +18,8 @@ var purchasePhone = document.querySelector('.purchase-phone'),
     phonesPurchasedCount = document.querySelector('.phones-purchased-count'),
     phonesPurchasedTotal = document.querySelector('.phones-purchased-total'),
     accessoriesPurchasedCount = document.querySelector('.accessory-purchased-count'),
-    accessoriesPurchasedTotal = document.querySelector('.accessory-purchased-total');
+    accessoriesPurchasedTotal = document.querySelector('.accessory-purchased-total'),
+    combinedTotal = document.querySelector('.combined-total');
 
 phoneCost.textContent = "$" + PHONE_PRICE.toFixed(2);
 accessoryCost.textContent = "$" + ACCESSORY_PRICE.toFixed(2);
@@ -28,12 +29,19 @@ function updateBalance(){
   budgetContent.textContent = BUDGET_BALANCE.toFixed(2);
 }
 
+function updateTotal(){
+  var currentTotal =  totalPhonesCost + totalAccessoriesCost;
+  var taxedTotal = currentTotal * TAX_RATE;
+  combinedTotal.textContent = "$" + taxedTotal.toFixed(2)
+}
+
 updateBalance();
+updateTotal();
 
 function purchaseAttempt($item){
   if(BUDGET_BALANCE > SPENDING_THRESHOLD) {
     var Total = $item * TAX_RATE;
-    BUDGET_BALANCE = BUDGET_BALANCE - Total;
+    BUDGET_BALANCE = BUDGET_BALANCE - Total; 
   } else {
     alert("Sorry, you've reached your limit!")
   }
@@ -47,20 +55,25 @@ purchasePhone.addEventListener("click", function(){
   purchaseAttempt(PHONE_PRICE);
 
   // This should only be added *if* the purchase is made
+  // Should also be removed from the event handler
   totalPhonesPurchased++;
   totalPhonesCost = totalPhonesCost + PHONE_PRICE;
+  
   phonesPurchasedCount.textContent = totalPhonesPurchased;
   phonesPurchasedTotal.textContent = "$" + totalPhonesCost.toFixed(2);
   updateBalance();
+  updateTotal();
 });
 
 purchaseAccessory.addEventListener("click", function(){
   purchaseAttempt(ACCESSORY_PRICE);
 
   // This should only be added *if* the purchase is made
+  // Should also be removed from the event handler
   totalAccessoriesPurchased++;
   totalAccessoriesCost = totalAccessoriesCost + ACCESSORY_PRICE;
   accessoriesPurchasedCount.textContent = totalAccessoriesPurchased;
   accessoriesPurchasedTotal.textContent = "$" + totalAccessoriesCost.toFixed(2);
   updateBalance();
+  updateTotal();
 });
