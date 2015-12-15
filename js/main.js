@@ -39,19 +39,25 @@ function purchaseAttempt($item){
   }
 }
 
+
+// These event listeners have a lot of repetition
+// Could stand to be dried up. 
+
 purchasePhone.addEventListener("click", function(){
   purchaseAttempt(PHONE_PRICE);
+
+  // This should only be added *if* the purchase is made
   totalPhonesPurchased++;
   totalPhonesCost = totalPhonesCost + PHONE_PRICE;
-  
   phonesPurchasedCount.textContent = totalPhonesPurchased;
   phonesPurchasedTotal.textContent = "$" + totalPhonesCost.toFixed(2);
-  
   updateBalance();
 });
 
 purchaseAccessory.addEventListener("click", function(){
   purchaseAttempt(ACCESSORY_PRICE);
+
+  // This should only be added *if* the purchase is made
   totalAccessoriesPurchased++;
   totalAccessoriesCost = totalAccessoriesCost + ACCESSORY_PRICE;
   accessoriesPurchasedCount.textContent = totalAccessoriesPurchased;
